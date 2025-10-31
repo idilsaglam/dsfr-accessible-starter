@@ -1,8 +1,8 @@
 export default function Justificatifs() {
   return (
-    <main id="main">
-      <h1>Justificatifs</h1>
+    <section aria-labelledby="justifs-title">
+      <h1 id="justifs-title" className="fr-h1">Justificatifs</h1>
       <p>Formulaire + Upload (à implémenter).</p>
-    </main>
-  )
+    </section>
+  );
 }

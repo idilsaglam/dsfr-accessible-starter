@@ -1,0 +1,14 @@
+[
+  {
+    "url": "http://localhost:4173/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/idilsaglam/Documents/mtssf-a11y/localhost--2025_10_31_15_40_09.report.html",
+    "jsonPath": "/Users/idilsaglam/Documents/mtssf-a11y/localhost--2025_10_31_15_40_09.report.json",
+    "summary": {
+      "performance": 0.89,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 0.9
+    }
+  }
+]
