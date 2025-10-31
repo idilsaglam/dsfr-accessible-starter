@@ -1,0 +1,11 @@
+:root {
+  --fg: #0b0c0c;
+  --bg: #ffffff;
+  --link: #0053b3;
+  --focus: #117f6b;
+}
+body { color: var(--fg); background: var(--bg); font-family: system-ui, sans-serif; }
+a { color: var(--link); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.skip-link { position: absolute; left: -9999px; top: -9999px; }
+.skip-link:focus { position: static; }
