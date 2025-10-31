@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest", "node", "@testing-library/jest-dom"],  // ← no "jest-axe" here
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "__tests__/**/*",
+    "test/setup.ts",
+    "test/types/**/*.d.ts"            // ← add this line in step 2
+  ]
+}

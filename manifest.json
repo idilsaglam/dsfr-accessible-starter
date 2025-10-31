@@ -2,8 +2,8 @@
   {
     "url": "http://localhost:4173/",
     "isRepresentativeRun": true,
-    "htmlPath": "/Users/idilsaglam/Documents/mtssf-a11y/localhost--2025_10_31_16_53_10.report.html",
-    "jsonPath": "/Users/idilsaglam/Documents/mtssf-a11y/localhost--2025_10_31_16_53_10.report.json",
+    "htmlPath": "/Users/idilsaglam/Documents/mtssf-a11y/localhost--2025_10_31_22_59_04.report.html",
+    "jsonPath": "/Users/idilsaglam/Documents/mtssf-a11y/localhost--2025_10_31_22_59_04.report.json",
     "summary": {
       "performance": 0.87,
       "accessibility": 1,
