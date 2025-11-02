@@ -33,4 +33,6 @@ jobs:
           echo "PORT=$PORT" >> "$GITHUB_ENV"
           echo "URL=http://localhost:${PORT}" >> "$GITHUB_ENV"
       - name: Show URL 
-        run: echo $URL
+        uses: Makepad-fr/pa11y-action@v1.0.0
+        with:
+          url: $URL
