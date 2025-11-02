@@ -27,9 +27,10 @@ jobs:
           tags: idilsaglam/mtssf:latest 
       - name: Run docker container 
         run: docker run -d --name idil-saglam-mtssf -P idilsaglam/mtssf:latest
-      - name: Get port number 
-        run: | 
-          URL=$(docker port idil-saglam-mtssf 8080/tcp)
-          echo "URL=$URL" >> $GITHUB_ENV
+      - name: Get port number
+        run: |
+          PORT=$(docker port idil-saglam-mtssf 8080/tcp | head -n1 | sed -E 's/.*:([0-9]+)$/\1/')
+          echo "PORT=$PORT" >> "$GITHUB_ENV"
+          echo "URL=http://localhost:${PORT}" >> "$GITHUB_ENV"
       - name: Show URL 
         run: echo $URL
