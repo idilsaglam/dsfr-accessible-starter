@@ -2,14 +2,18 @@ FROM node:24-slim AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 ENV CI="true"
-RUN corepack enable
-COPY . /app
+
+# to install pnpm 
+RUN corepack enable 
+
+# change current directory to /app 
 WORKDIR /app
 
-FROM base AS prod-deps
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
+COPY . .
 
 FROM base AS build
+
+# docker buildkit cache (cache pnpm install)
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN pnpm run build
 
