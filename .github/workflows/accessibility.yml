@@ -1,0 +1,29 @@
+name: Accessibility & Performance
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Setup docker buildx
+        uses: docker/setup/buildx-action@v3
+      - name: Build
+        uses: docker/build-push-action@v6
+        with:
+          push: false 
+          tags: idilsaglam/mtssf:latest 
+      - name: Run docker container 
+        run: docker run -d --name idil-saglam-mtssf -P idilsaglam/mtssf:latest
+      - name: Get port number 
+        run: | 
+          URL=$(docker port idil-saglam-mtssf 8080/tcp)
+          echo "URL=$URL" >> $GITHUB_ENV
+      - name: Show URL 
+        run: echo $URL
