@@ -28,12 +28,12 @@ jobs:
       - name: Create docker network
         run: docker network create --attachable matcha
       - name: Run docker container 
-        run: docker run -d --network matcha --name idil-saglam-mtssf -P idilsaglam/mtssf:latest
+        run: docker run -d --network matcha --hostname mtssf --name idil-saglam-mtssf -P idilsaglam/mtssf:latest
       - name: Get port number
         run: |
           PORT=$(docker port idil-saglam-mtssf 8080/tcp | head -n1 | sed -E 's/.*:([0-9]+)$/\1/')
           echo "PORT=$PORT" >> "$GITHUB_ENV"
-          echo "URL=http://localhost:${PORT}" >> "$GITHUB_ENV"
+          echo "URL=http://mtssf:${PORT}" >> "$GITHUB_ENV"
       - name: Show URL 
         uses: Makepad-fr/pa11y-action@main
         with:
