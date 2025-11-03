@@ -33,7 +33,7 @@ jobs:
         run: |
           PORT=$(docker port idil-saglam-mtssf 8080/tcp | head -n1 | sed -E 's/.*:([0-9]+)$/\1/')
           echo "PORT=$PORT" >> "$GITHUB_ENV"
-          echo "URL=http://mtssf:${PORT}" >> "$GITHUB_ENV"
+          echo "URL=http://mtssf:8080" >> "$GITHUB_ENV"
       - name: Show URL 
         uses: Makepad-fr/pa11y-action@main
         with:
