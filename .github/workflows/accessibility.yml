@@ -35,4 +35,4 @@ jobs:
       - name: Show URL 
         uses: Makepad-fr/pa11y-action@main
         with:
-          url: $URL
+          url: ${{ env.URL }}
